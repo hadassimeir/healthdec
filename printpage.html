@@ -1,0 +1,87 @@
+<html dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                height: 842px;
+                width: 595px;
+                /* to centre page on screen*/
+                margin-left: auto;
+                margin-right: auto;
+                font-size:small;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .bigtable{
+                width:590px;
+            }
+            .bigtable td {
+                width:290px;
+                height:270px;
+                border: 1px solid #1C6EA4;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:8px;
+                vertical-align: top;
+                padding: 15px;
+            }
+            .headertable {
+                height:20px;
+            }
+            .headertable td{
+                text-align: center;
+                font-size:7px;
+                height:20px;
+                font-family: Arial, Helvetica, sans-serif;
+                border: 0px solid #1C6EA4;
+                padding: 0px;
+            }
+            
+        </style>
+    </head>
+    <body id="body" onload="window.print()">
+        <script>
+            
+            let params = new URLSearchParams(location.search);
+            studentname=params.get('studentname')
+            studentid=params.get('studentid')
+            parentname=params.get('parentname')
+            parentid=params.get('parentid')
+            startdate=params.get('startdate')
+            
+            tablecontent='<table class="bigtable">';
+            idate=0;
+            for (i = 0; i < 6; i++) {
+                if(i==0 || i==2 || i==4){tablecontent += '<tr>';}
+                    tablecontent += '<td>';
+                    tablecontent += '<table class="headertable"><tr><td>אגף הפיקוח על הניהול,<br/>מנהל פדגוגי</td><td><img src="MOElogo.png" style="height:20px;"></td><td>אגף בכיר לביטחון,<br>שעת חירום ובטיחות</td><tr></table><br/>';
+                    tablecontent += '<span style="font-size:11px;"><center>הצהרת בריאות לתלמיד</center></span><br/>';
+                    tablecontent += 'שם התלמיד: <u>'+studentname+'</u><br/>';
+                    tablecontent += 'מספר תעודת זהות: <u>'+studentid+'</u><br/><br/>';
+                    tablecontent += 'אני מצהיר כדלהלן:<br/><ol><li>מדדתי חום לילדי/תי ונמצא כי חום גופו/ה מתחת ל38 מעלות צלזיוס</li><li> ילדי/תי לא משתעל/ת ואין לו/ה קשיים בנשימה.<span style="font-size:5px;"><sup>1</sup></span></li><li> למיטב ידעתי ילדי/תי לא היה/תה במגע קרוב עם חולה קורונה בשבועיים האחרונים</li></ol><br/>';
+                    tablecontent += 'שם ההורה: <u>'+parentname+'</u><br/>';
+                    tablecontent += 'מספר תעודת זהות: <u>'+parentid+'</u><br/>';
+                    if (addDays(startdate,idate).getDay()==6){idate=idate+1;}
+                    tablecontent += 'תאריך: <u>'+dateformatddmmyyyy(addDays(startdate,idate))+'</u><br/><br/>';
+                    tablecontent += 'חתימה: ___________________<br/><br/><br/><br/>';
+                    tablecontent += '<span style="font-size:7px;"><sup>1-למעט שיעול או קושי בנשימה הנובע ממצב כרוני כגון אסטמה או אלרגיה אחרת</sup></span>'
+                    tablecontent += '</td>';
+                if(i==1 || i==3 || i==5){tablecontent += '</tr>';}
+                idate=idate+1;
+            }
+            tablecontent += '</table>';
+            document.getElementById("body").innerHTML = tablecontent;
+
+            function addDays(date, days) {
+                var result = new Date(date);
+                result.setDate(result.getDate() + days);
+                return result;
+            }
+            function dateformatddmmyyyy(x)
+                {
+                    day = x.getDate()
+                    month = x.getMonth()+1
+                    year = x.getFullYear()
+                    return day + "/" + month + "/" + year;
+                }
+        </script>
+    </body>
+</html>

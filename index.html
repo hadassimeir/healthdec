@@ -1,0 +1,62 @@
+<html dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+        <title>הדפסת הצהרת בריאות</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <!-- Custom styles for this template -->
+        <link href="floating-labels.css" rel="stylesheet">
+    </head>
+    <body>
+        <form method="GET" action="printpage.html">
+            <div class="text-center mb-4">
+                <h4>הדפסת הצהרות בריאות</h4><br/>
+                <div class="form-label-group">
+                    <input type="text" id="studentname" class="form-control" placeholder="שם התלמיד" required autofocus name="studentname">
+                    <label for="studentname">שם התלמיד</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="number" id="studentid" class="form-control" placeholder="ת.ז. תלמיד" required  name="studentid" pattern="[0-9]*">
+                    <label for="studentid">ת.ז. תלמיד</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="parentname" class="form-control" placeholder="שם ההורה" required  name="parentname">
+                    <label for="parentname">שם ההורה</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="number" id="parentid" class="form-control" placeholder="ת.ז. הורה" required  name="parentid" pattern="[0-9]*">
+                    <label for="parentid">ת.ז. הורה</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="date" id="startdate" class="form-control" placeholder="תאריך התחלה" required  name="startdate">
+                    <label for="startdate">תאריך התחלה</label>
+                </div>
+                <span style="font-size:smaller">דף זה ידפיס עמוד להדפסה של שישה אישורים ממולאים מראש ורק צריך לחתום</span><br/><br/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">שלח</button><br/><br/><br/>
+                <span style="font-size:10px;">האותיות הקטנות: אין אחריות לאתר, אין הצפנה באתר, קוד פתוח, השימוש באחריות המשתמש בלבד. המידע לא נשמר במאגר כל שהוא.<br/></span>
+                <a class="github-button" href="https://github.com/hadassimeir/healthdec/fork" data-icon="octicon-repo-forked" aria-label="Fork hadassimeir/healthdec on GitHub">Fork</a>
+            </div>
+            
+        </form>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176612573-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176612573-1');
+        </script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body>
+</html>
